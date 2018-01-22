@@ -1,0 +1,315 @@
+{
+  "0": {
+    "0": "objectclass",
+    "1": "uid",
+    "2": "loginshell",
+    "3": "sambahomedrive",
+    "4": "sambapwdlastset",
+    "5": "sambakickofftime",
+    "6": "sambapwdmustchange",
+    "7": "sambapwdcanchange",
+    "8": "sambaacctflags",
+    "9": "accountstatus",
+    "10": "mailquotasize",
+    "11": "mailbox",
+    "12": "umlvmobilite",
+    "13": "umlvmail",
+    "14": "umlvshelllogin",
+    "15": "umlvdomain",
+    "16": "umlvwww",
+    "17": "umlvddt",
+    "18": "umlvcal",
+    "19": "umlvreport",
+    "20": "umlvedt",
+    "21": "umlvcvs",
+    "22": "umlvproxy",
+    "23": "umlvfoad",
+    "24": "umlvt3be",
+    "25": "umlvlogolab",
+    "26": "mailhost",
+    "27": "language",
+    "28": "automountinformation",
+    "29": "radiustunnelprivategroupid",
+    "30": "supannorganisme",
+    "31": "supannlisterouge",
+    "32": "edupersonaffiliation",
+    "33": "edupersonprincipalname",
+    "34": "mailforwardingaddress",
+    "35": "umlvpguser",
+    "36": "umlvmysqluser",
+    "37": "uidnumber",
+    "38": "gidnumber",
+    "39": "gecos",
+    "40": "homedirectory",
+    "41": "displayname",
+    "42": "cn",
+    "43": "givenname",
+    "44": "sn",
+    "45": "sambasid",
+    "46": "sambaprimarygroupsid",
+    "47": "sambahomepath",
+    "48": "sambaprofilepath",
+    "49": "description",
+    "50": "mail",
+    "51": "upemmail",
+    "52": "mailmessagestore",
+    "53": "umlvent",
+    "54": "umlvcreatetimestamp",
+    "55": "umlvendtimestamp",
+    "56": "althomeftpdir",
+    "57": "supannetuid",
+    "58": "umlvmodifytimestamp",
+    "objectclass": {
+      "0": "top",
+      "1": "inetOrgPerson",
+      "2": "posixAccount",
+      "3": "shadowAccount",
+      "4": "sambaSamAccount",
+      "5": "EtudiantMlV",
+      "6": "qmailUser",
+      "7": "CourierMailAccount",
+      "8": "SquirrelMailUser",
+      "9": "radiusprofile",
+      "10": "automount",
+      "11": "supannPerson",
+      "12": "eduPerson",
+      "13": "Upem",
+      "count": 14
+    },
+    "uid": {
+      "0": "vrasquie",
+      "count": 1
+    },
+    "loginshell": {
+      "0": "/bin/bash",
+      "count": 1
+    },
+    "sambahomedrive": {
+      "0": "M:",
+      "count": 1
+    },
+    "sambapwdlastset": {
+      "0": "111581916",
+      "count": 1
+    },
+    "sambakickofftime": {
+      "0": "2147483647",
+      "count": 1
+    },
+    "sambapwdmustchange": {
+      "0": "2147483647",
+      "count": 1
+    },
+    "sambapwdcanchange": {
+      "0": "2147483647",
+      "count": 1
+    },
+    "sambaacctflags": {
+      "0": "[U          ]",
+      "count": 1
+    },
+    "accountstatus": {
+      "0": "active",
+      "count": 1
+    },
+    "mailquotasize": {
+      "0": "50000000",
+      "count": 1
+    },
+    "mailbox": {
+      "0": "vrasquie/",
+      "count": 1
+    },
+    "umlvmobilite": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvmail": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvshelllogin": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvdomain": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvwww": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvddt": {
+      "0": "FALSE",
+      "count": 1
+    },
+    "umlvcal": {
+      "0": "FALSE",
+      "count": 1
+    },
+    "umlvreport": {
+      "0": "FALSE",
+      "count": 1
+    },
+    "umlvedt": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvcvs": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvproxy": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvfoad": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvt3be": {
+      "0": "FALSE",
+      "count": 1
+    },
+    "umlvlogolab": {
+      "0": "FALSE",
+      "count": 1
+    },
+    "mailhost": {
+      "0": "mailetud.u-pem.fr",
+      "count": 1
+    },
+    "language": {
+      "0": "fr_FR",
+      "count": 1
+    },
+    "automountinformation": {
+      "0": "-fstype=nfs,hard,intr,nodev,nosuid,rw,rsize=8192,wsize=8192 localhost:/mnt/baie/v/vr/vrasquie/",
+      "count": 1
+    },
+    "radiustunnelprivategroupid": {
+      "0": "16",
+      "count": 1
+    },
+    "supannorganisme": {
+      "0": "{UAI}0772502B",
+      "count": 1
+    },
+    "supannlisterouge": {
+      "0": "FALSE",
+      "count": 1
+    },
+    "edupersonaffiliation": {
+      "0": "STUDENT",
+      "count": 1
+    },
+    "edupersonprincipalname": {
+      "0": "2001476134488841",
+      "count": 1
+    },
+    "mailforwardingaddress": {
+      "0": "vrasquie@etud.u-pem.fr",
+      "count": 1
+    },
+    "umlvpguser": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvmysqluser": {
+      "0": "FALSE",
+      "count": 1
+    },
+    "uidnumber": {
+      "0": "22090",
+      "count": 1
+    },
+    "gidnumber": {
+      "0": "5156",
+      "count": 1
+    },
+    "gecos": {
+      "0": "RASQUIER VINCENT",
+      "count": 1
+    },
+    "homedirectory": {
+      "0": "/home/6ir2/vrasquie",
+      "count": 1
+    },
+    "displayname": {
+      "0": "RASQUIER VINCENT",
+      "count": 1
+    },
+    "cn": {
+      "0": "RASQUIER VINCENT",
+      "count": 1
+    },
+    "givenname": {
+      "0": "VINCENT",
+      "count": 1
+    },
+    "sn": {
+      "0": "RASQUIER",
+      "count": 1
+    },
+    "sambasid": {
+      "0": "S-1-5-21-23290678-232090340-1577130359-45180",
+      "count": 1
+    },
+    "sambaprimarygroupsid": {
+      "0": "S-1-5-21-23290678-232090340-1577130359-11313",
+      "count": 1
+    },
+    "sambahomepath": {
+      "0": "\\\\traban\\vrasquie",
+      "count": 1
+    },
+    "sambaprofilepath": {
+      "0": "\\\\traban\\profiles\\vrasquie",
+      "count": 1
+    },
+    "description": {
+      "0": "2017",
+      "count": 1
+    },
+    "mail": {
+      "0": "vrasquie@etud.u-pem.fr",
+      "count": 1
+    },
+    "upemmail": {
+      "0": "vrasquie@etud.u-pem.fr",
+      "count": 1
+    },
+    "mailmessagestore": {
+      "0": "/var/mail/vrasquie/Maildir/",
+      "count": 1
+    },
+    "umlvent": {
+      "0": "TRUE",
+      "count": 1
+    },
+    "umlvcreatetimestamp": {
+      "0": "20130711000000Z",
+      "count": 1
+    },
+    "umlvendtimestamp": {
+      "0": "20181231000000Z",
+      "count": 1
+    },
+    "althomeftpdir": {
+      "0": "/mnt/recup/v/vr/vrasquie",
+      "count": 1
+    },
+    "supannetuid": {
+      "0": "161224",
+      "count": 1
+    },
+    "umlvmodifytimestamp": {
+      "0": "20171010232114Z",
+      "count": 1
+    },
+    "count": 59,
+    "dn": "uid=vrasquie,ou=Users,ou=Etudiant,dc=univ-mlv,dc=fr"
+  },
+  "count": 1
+}
