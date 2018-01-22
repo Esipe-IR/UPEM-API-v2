@@ -48,4 +48,11 @@ services:
       - "8080:80"
     depends_on:
       - openldap
+  api:
+    image: php/5.6-apache:latest
+    container_name: upemapi
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
 
