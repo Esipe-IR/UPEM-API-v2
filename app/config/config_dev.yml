@@ -2,8 +2,8 @@ imports:
     - { resource: config.yml }
 
 parameters:
-    ldap.host: 'ldap://localhost'
-    ldap.dn: ''
+    ldap.host: 'ldap://ldap'
+    ldap.dn: 'dc=univ-mlv,dc=fr'
 
 framework:
     router:
