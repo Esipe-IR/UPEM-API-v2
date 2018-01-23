@@ -11,8 +11,6 @@ services:
       LDAP_ADMIN_PASSWORD: "admin"
       LDAP_CONFIG_PASSWORD: "config"
       LDAP_READONLY_USER: "false"
-      #LDAP_READONLY_USER_USERNAME: "readonly"
-      #LDAP_READONLY_USER_PASSWORD: "readonly"
       LDAP_RFC2307BIS_SCHEMA: "false"
       LDAP_BACKEND: "hdb"
       LDAP_TLS: "true"
@@ -29,14 +27,13 @@ services:
       LDAP_SSL_HELPER_PREFIX: "ldap"
     tty: true
     stdin_open: true
-    #volumes:
-    #  - docker/lib:/var/lib/ldap
-    #  - docker/config:/etc/ldap/slapd.d
-    #  - docker/certs/:/container/service/slapd/assets/certs/
+    volumes:
+      - $PWD/docker/lib:/var/lib/ldap
+      - $PWD/docker/config:/etc/ldap/slapd.d
     ports:
       - "389:389"
       - "636:636"
-    domainname: "example.org" # important: same as hostname
+    domainname: "example.org"
     hostname: "example.org"
   phpldapadmin:
     image: osixia/phpldapadmin:latest
@@ -45,14 +42,13 @@ services:
       PHPLDAPADMIN_LDAP_HOSTS: "openldap"
       PHPLDAPADMIN_HTTPS: "false"
     ports:
-      - "8080:80"
+      - "3080:80"
     depends_on:
       - openldap
   api:
-    image: php/5.6-apache:latest
+    image: ./docker/image/Dockerfile
     container_name: upemapi
     ports:
-      - "8000:80"
+      - "3000:80"
     volumes:
       - ./:/var/www/html
-

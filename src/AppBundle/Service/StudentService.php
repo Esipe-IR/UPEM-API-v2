@@ -2,8 +2,8 @@
 
 namespace AppBundle\Service;
 
+use AppBundle\Model\LdapResponse;
 use AppBundle\Model\Student;
-use Symfony\Component\Ldap\Entry;
 use Symfony\Component\Ldap\Ldap;
 
 /**
@@ -11,11 +11,6 @@ use Symfony\Component\Ldap\Ldap;
  */
 class StudentService
 {
-    /**
-     * @var string
-     */
-    private $env;
-
     /**
      * @var Ldap
      */
@@ -29,84 +24,76 @@ class StudentService
     /**
      * StudentService constructor
      *
-     * @param string $env
      * @param string $host
      * @param string $dn
      */
-    public function __construct($env, $host, $dn)
+    public function __construct($host, $dn)
     {
-        $this->env = $env;
-        if ($env !== "dev") {
-            $this->ldap = Ldap::create("ext_ldap", ["connection_string" => $host]);
-            $this->ldap->bind();
-            $this->dn = $dn;
-        }
+        $this->ldap = Ldap::create("ext_ldap", ["connection_string" => $host]);
+        $this->ldap->bind();
+        $this->dn = $dn;
     }
 
     /**
      * Find students by supannEtuId
      *
      * @param int $supannEtuId
-     * @return array<Student>
+     * @return LdapResponse
      */
     public function findBySupannEtuId($supannEtuId)
     {
-        if ($this->env === "dev") {
-            return $this->deserialize([new Entry($this->dn)]);
-        }
-        $entries = $this->ldap->query($this->dn, static::defaultFilter(Student::SUPANN_ETU_ID, $supannEtuId))
-            ->execute()
-            ->toArray();
-        return $this->deserialize($entries);
+        $filter = static::defaultFilter(Student::SUPANN_ETU_ID, $supannEtuId);
+        $entries = $this->ldap->query($this->dn, $filter)->execute();
+
+        return $this->deserialize($entries->count(), $entries->toArray());
     }
 
     /**
      * Find students by uid
      *
      * @param int $uid
-     * @return array<Student>
+     * @return LdapResponse
      */
     public function findByUid($uid)
     {
-        if ($this->env === "dev") {
-            return $this->deserialize([new Entry($this->dn)]);
-        }
-        $entries = $this->ldap->query($this->dn, static::defaultFilter(Student::UID, $uid))
-            ->execute()
-            ->toArray();
-        return $this->deserialize($entries);
+        $filter = static::defaultFilter(Student::UID, $uid);
+        $entries = $this->ldap->query($this->dn, $filter)->execute();
+
+        return $this->deserialize($entries->count(), $entries->toArray());
     }
 
     /**
      * Find students by gidNumber
      *
      * @param int $gidNumber
-     * @return array<Student>
+     * @return LdapResponse
      */
     public function findByGidNumber($gidNumber)
     {
-        if ($this->env === "dev") {
-            return $this->deserialize([new Entry($this->dn)]);
-        }
-        $entries = $this->ldap->query($this->dn, static::simpleFilter(Student::GID_NUMBER, $gidNumber))
-            ->execute()
-            ->toArray();
-        return $this->deserialize($entries);
+        $filter = static::simpleFilter(Student::GID_NUMBER, $gidNumber);
+        $entries = $this->ldap->query($this->dn, $filter)->execute();
+
+        return $this->deserialize($entries->count(), $entries->toArray());
     }
 
     /**
      * Deserialize array of Entry to array of Student
      *
      * @param array<Entry> $entries
-     * @return array<Student>
+     * @return LdapResponse
      */
-    private static function deserialize($entries)
+    private static function deserialize($count, $entries)
     {
         $students = [];
         foreach ($entries as $entry) {
             $students[] = Student::deserialize($entry);
         }
-        return $students;
+        $ldapResponse = new LdapResponse();
+        $ldapResponse
+            ->setCount($count)
+            ->setData($students)
+        ;
+        return $ldapResponse;
     }
 
     /**

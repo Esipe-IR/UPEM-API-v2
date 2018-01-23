@@ -5,6 +5,11 @@ imports:
 
 parameters:
     locale: en
+    ldap.host: 'ldap://vmldapetud1.u-pem.fr/'
+    ldap.dn: 'ou=Users,ou=Etudiant,dc=univ-mlv,dc=fr'
+    ade.host: 'https://edt.u-pem.fr'
+    ade.login: 'visuedt'
+    ade.password: 'visuedt'
 
 framework:
     secret: '%secret%'
@@ -47,7 +52,7 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
-# FosRestBundle
+# Fos Rest Bundle
 fos_rest:
     routing_loader:
         default_format: json
@@ -61,6 +66,7 @@ fos_rest:
             json: true
     param_fetcher_listener: force
 
+# CSA Guzzle
 csa_guzzle:
     profiler: '%kernel.debug%'
     logger: true

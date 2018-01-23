@@ -1,6 +1,10 @@
 imports:
     - { resource: config.yml }
 
+parameters:
+    ldap.host: 'ldap://localhost'
+    ldap.dn: ''
+
 framework:
     router:
         resource: '%kernel.project_dir%/app/config/routing_dev.yml'
