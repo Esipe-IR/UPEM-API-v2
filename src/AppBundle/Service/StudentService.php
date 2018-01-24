@@ -42,7 +42,7 @@ class StudentService
      */
     public function findBySupannEtuId($supannEtuId)
     {
-        $filter = static::defaultFilter(Student::SUPANN_ETU_ID, $supannEtuId);
+        $filter = static::simpleFilter(Student::SUPANN_ETU_ID, $supannEtuId);
         $entries = $this->ldap->query($this->dn, $filter)->execute();
 
         return $this->deserialize($entries->count(), $entries->toArray());
@@ -56,7 +56,7 @@ class StudentService
      */
     public function findByUid($uid)
     {
-        $filter = static::defaultFilter(Student::UID, $uid);
+        $filter = static::simpleFilter(Student::UID, $uid);
         $entries = $this->ldap->query($this->dn, $filter)->execute();
 
         return $this->deserialize($entries->count(), $entries->toArray());

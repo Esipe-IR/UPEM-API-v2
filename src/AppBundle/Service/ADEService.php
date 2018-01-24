@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Service;
+
 use GuzzleHttp\Client;
 
 /**
