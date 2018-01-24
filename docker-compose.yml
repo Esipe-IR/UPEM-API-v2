@@ -23,8 +23,10 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - ./docker/image/ldap/ldap:/var/lib/ldap
-      - ./docker/image/ldap/slapd.d:/etc/ldap/slapd.d
+      #ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f /root/ldif
+      #- ./docker/image/ldap/ldap:/var/lib/ldap
+      #- ./docker/image/ldap/slapd.d:/etc/ldap/slapd.d
+      - ./docker/image/ldap/ldif:/root/ldif
     ports:
       - "389:389"
       - "636:636"
