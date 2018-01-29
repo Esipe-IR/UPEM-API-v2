@@ -13,7 +13,11 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    AppBundle\Service\StudentService:
+    AppBundle\Service\Ldap\LdapService:
         arguments:
             - '%ldap.host%'
             - '%ldap.dn%'
+
+    AppBundle\Service\StudentService:
+        arguments:
+            - '@AppBundle\Service\Ldap\LdapService'

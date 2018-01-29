@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Class StudentController
  *
- * @Rest\Route("/api/student")
+ * @Rest\Route("/api/v2/student")
  */
 class StudentController extends FOSRestController
 {
@@ -25,6 +25,7 @@ class StudentController extends FOSRestController
         if (!$user) {
             return $this->view(null, Response::HTTP_UNAUTHORIZED);
         }
+
         return $this->view($user, Response::HTTP_OK);
     }
 
@@ -32,7 +33,7 @@ class StudentController extends FOSRestController
      * @Rest\Get("/supannEtuId/{supannEtuId}")
      *
      * @param StudentService $service
-     * @param $supannEtuId
+     * @param int            $supannEtuId
      *
      * @return \FOS\RestBundle\View\View
      */
@@ -42,6 +43,7 @@ class StudentController extends FOSRestController
         if ($data->isEmpty()) {
             return $this->view(null, Response::HTTP_NOT_FOUND);
         }
+
         return $this->view($data, Response::HTTP_OK);
     }
 
@@ -49,7 +51,7 @@ class StudentController extends FOSRestController
      * @Rest\Get("/uid/{uid}")
      *
      * @param StudentService $service
-     * @param $uid
+     * @param string         $uid
      *
      * @return \FOS\RestBundle\View\View
      */
@@ -59,6 +61,7 @@ class StudentController extends FOSRestController
         if ($data->isEmpty()) {
             return $this->view(null, Response::HTTP_NOT_FOUND);
         }
+
         return $this->view($data, Response::HTTP_OK);
     }
 
@@ -66,7 +69,7 @@ class StudentController extends FOSRestController
      * @Rest\Get("gidNumber/{gidNumber}")
      *
      * @param StudentService $service
-     * @param $gidNumber
+     * @param int            $gidNumber
      *
      * @return \FOS\RestBundle\View\View
      */
@@ -76,6 +79,7 @@ class StudentController extends FOSRestController
         if ($data->isEmpty()) {
             return $this->view(null, Response::HTTP_NOT_FOUND);
         }
+
         return $this->view($data, Response::HTTP_OK);
     }
 }

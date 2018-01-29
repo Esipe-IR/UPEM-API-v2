@@ -8,7 +8,7 @@ use FOS\RestBundle\Controller\FOSRestController;
 /**
  * Class CalendarController
  *
- * @Rest\Route("/api/calendar")
+ * @Rest\Route("/api/v2/calendar")
  */
 class CalendarController extends FOSRestController
 {
